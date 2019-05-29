@@ -5,12 +5,12 @@ class RoutinesController < ApplicationController
   def index
     @routines = Routine.all
 
-    render json: @routines
+    render json: @routines.to_json(include: :exercises)
   end
 
   # GET /routines/1
   def show
-    render json: @routine
+    render json: @routine.to_json(include: :exercises)
   end
 
   # POST /routines
