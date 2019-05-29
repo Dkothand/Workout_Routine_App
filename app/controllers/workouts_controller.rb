@@ -5,12 +5,12 @@ class WorkoutsController < ApplicationController
   def index
     @workouts = Workout.all
 
-    render json: @workouts
+    render json: @workouts.to_json(include: [:exercise, :routine])
   end
 
   # GET /workouts/1
   def show
-    render json: @workout
+    render json: @workout.to_json(include: [:exercise, :routine])
   end
 
   # POST /workouts
