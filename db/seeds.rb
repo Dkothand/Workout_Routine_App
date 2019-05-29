@@ -24,3 +24,5 @@ Routine.create([
     {name: "Summer Body", difficulty: "Easy"},
     {name: "Widow Maker", difficulty: "Hard"}
 ])
+
+puts "Database seeded!"
