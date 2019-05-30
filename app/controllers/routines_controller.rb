@@ -18,7 +18,7 @@ class RoutinesController < ApplicationController
     @routine = Routine.new(routine_params)
 
     if @routine.save
-      render json: @routine, status: :created, location: @routine
+      render json: @routine.to_json(include: :exercises), status: :created, location: @routine
     else
       render json: @routine.errors, status: :unprocessable_entity
     end
